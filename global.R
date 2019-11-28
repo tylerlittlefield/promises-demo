@@ -9,5 +9,5 @@ plan(multiprocess)
 source("R/utils.R")
 
 config <- list(
-  data = c("3 Seconds", "5 Seconds")
+  data = c("5 Seconds", "10 Seconds")
 )
