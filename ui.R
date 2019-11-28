@@ -14,17 +14,7 @@ ui <- fluidPage(
   br(),
   
   fluidRow(
-    # select input for data
-    # column(
-    #   width = 4,
-    #   offset = 4,
-    #   align = "center",
-    #   selectInput(
-    #     inputId = "data",
-    #     label = NULL,
-    #     choices = c("5 Seconds", "10 Seconds")
-    #   )
-    # ),
+    
     # go button
     column(
       width = 4,
@@ -37,6 +27,8 @@ ui <- fluidPage(
         width = 100
       )
     ),
+    
+    # data table
     column(
       width = 4,
       offset = 4,
