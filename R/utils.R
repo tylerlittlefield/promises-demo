@@ -1,8 +1,8 @@
-wait_n <- function(text, n) {
+wait_n <- function(n) {
   show_waiter(
     tagList(
       spin_folding_cube(),
-      span("Showing waiter for {n} seconds ...", style = "color:white;")
+      span(glue("Showing waiter for {n} seconds ..."), style = "color:white;")
     )
   )
   
