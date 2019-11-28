@@ -15,16 +15,16 @@ ui <- fluidPage(
   
   fluidRow(
     # select input for data
-    column(
-      width = 4,
-      offset = 4,
-      align = "center",
-      selectInput(
-        inputId = "data",
-        label = NULL,
-        choices = c("5 Seconds", "10 Seconds")
-      )
-    ),
+    # column(
+    #   width = 4,
+    #   offset = 4,
+    #   align = "center",
+    #   selectInput(
+    #     inputId = "data",
+    #     label = NULL,
+    #     choices = c("5 Seconds", "10 Seconds")
+    #   )
+    # ),
     # go button
     column(
       width = 4,
@@ -35,6 +35,14 @@ ui <- fluidPage(
         label = "",
         icon = icon("arrow-right"),
         width = 100
+      )
+    ),
+    column(
+      width = 4,
+      offset = 4,
+      align = "center",
+      dataTableOutput(
+        outputId = "dt_table"
       )
     )
   )

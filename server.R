@@ -1,20 +1,24 @@
 server <- function(input, output, session) {
   
-  rv <- reactiveValues(large_data = data.frame())
+  rv <- reactiveValues(data = data.frame())
+  
+  load_data_async <- function() {
+    future({ 
+      exo_summary(output = "dataframe")[["counts_summary"]] 
+    })
+  }
   
   observeEvent(input$go, {
-    
-    if (input$data == "5 Seconds") {
-      
-      future({ wait_n(5) })
-      hide_waiter()
-      
-    } else if (input$data == "10 Seconds") {
-      
-      future({ wait_n(10) })
-      hide_waiter()
-      
-    }
-    
+    show_waiter()
+    promise_all(exo_data = load_data_async()) %...>%
+      with({
+        rv[["data"]] <- exo_data
+        output$dt_table <- renderDT({
+          exo_data
+        })
+        
+        hide_waiter()
+      })
   })
+  
 }
