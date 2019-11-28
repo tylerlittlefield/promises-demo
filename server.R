@@ -2,13 +2,11 @@ server <- function(input, output, session) {
   observeEvent(input$go, {
     
     switch (input$data,
-      "Small" = x <- 1:1e3,
-      "Large" = x <- 1:1e5
+      "3 Seconds" = { show_waiter2("5 seconds..."); Sys.sleep(5) },
+      "5 Seconds" = { show_waiter2("10 seconds..."); Sys.sleep(10) }
     )
     
-    output$plot <- renderPlot({
-      future({ x }) %...>% plot()
-    })
+    hide_waiter()
     
   })
 }

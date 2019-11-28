@@ -1,5 +1,8 @@
 ui <- fluidPage(
   
+  # use waiter package
+  use_waiter(),
+  
   # use custom css file
   includeCSS("www/custom.css"),
   
@@ -19,7 +22,7 @@ ui <- fluidPage(
       selectInput(
         inputId = "data",
         label = NULL,
-        choices = c("Small", "Large")
+        choices = config$data
       )
     ),
     # go button
@@ -32,15 +35,6 @@ ui <- fluidPage(
         label = "",
         icon = icon("arrow-right"),
         width = 100
-      )
-    ),
-    # plot output
-    column(
-      width = 4,
-      offset = 4,
-      align = "center",
-      plotOutput(
-        outputId = "plot"
       )
     )
   )
