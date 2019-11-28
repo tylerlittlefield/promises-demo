@@ -4,7 +4,7 @@ server <- function(input, output, session) {
   
   observeEvent(input$go, {
     
-    if (input$data == "5 seconds") {
+    if (input$data == "5 Seconds") {
       
       future({
         wait_n(5)
@@ -12,7 +12,7 @@ server <- function(input, output, session) {
       }) %...>%
         assign(rv[["large_data"]], .)
       
-    } else if (input$date == "10 seconds") {
+    } else if (input$data == "10 Seconds") {
       
       future({
         wait_n(10)
