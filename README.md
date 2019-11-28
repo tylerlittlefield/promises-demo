@@ -52,9 +52,13 @@ library(future)
 plan(multiprocess)
 ```
 
-When the go button is hit: 1. A loading screen appears 2. The data is
-loaded 3. The data is stored to the `rv` object 4. A datatable is
-rendered 5. The loading screen disappears.
+When the go button is hit:
+
+1.  A loading screen appears
+2.  The data is loaded
+3.  The data is stored to the `rv` object
+4.  A datatable is rendered
+5.  The loading screen disappears.
 
 If we omit the future/promises stuff, 2 users will hit the go button
 around the same time and one of them (whoever clicked last) will have to
