@@ -6,13 +6,13 @@ server <- function(input, output, session) {
     
     if (input$data == "5 Seconds") {
       
-      future({ wait_n(5) }) %...>%
-        hide_water()
+      future({ wait_n(5) })
+      hide_waiter()
       
     } else if (input$data == "10 Seconds") {
       
-      future({ wait_n(10) }) %...>%
-        hide_water()
+      future({ wait_n(10) })
+      hide_waiter()
       
     }
     
