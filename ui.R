@@ -22,7 +22,7 @@ ui <- fluidPage(
       selectInput(
         inputId = "data",
         label = NULL,
-        choices = config$data
+        choices = c("5 Seconds", "10 Seconds")
       )
     ),
     # go button
