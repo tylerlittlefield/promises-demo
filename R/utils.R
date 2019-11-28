@@ -1,8 +1,10 @@
-show_waiter2 <- function(text) {
+wait_n <- function(text, n) {
   show_waiter(
     tagList(
       spin_folding_cube(),
-      span(text, style = "color:white;")
+      span("Showing waiter for {n} seconds ...", style = "color:white;")
     )
   )
+  
+  Sys.sleep(n)
 }
